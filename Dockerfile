@@ -1,6 +1,6 @@
-FROM python:2.7-alpine
-
-LABEL maintainer="Samuel Gratzl <samuel_gratzl@gmx.at>"
+# FROM python:2.7-alpine
+FROM arm64v8/python:2.7-alpine
+# LABEL maintainer="Samuel Gratzl <samuel_gratzl@gmx.at>"
 
 VOLUME ["/backup"]
 WORKDIR /backup
