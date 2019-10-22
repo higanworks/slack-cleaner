@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import argparse
 from slack_cleaner import __version__
 
@@ -7,9 +8,9 @@ class Args():
   def __init__(self):
     p = argparse.ArgumentParser(prog='slack-cleaner')
 
-    # Token
-    p.add_argument('--token', required=True,
-                   help='Slack API token (https://api.slack.com/web)')
+    # # Token
+    # p.add_argument('--token', required=True,
+    #                help='Slack API token (https://api.slack.com/web)')
 
     # Log
     p.add_argument('--log', action='store_true',
@@ -89,7 +90,8 @@ class Args():
               args.group is None and args.mpdirect is None):
         p.error('A channel is required when using --message')
 
-    self.token = args.token
+    # self.token = args.token
+    self.token = os.environ.get("SLACK_TOKEN")
 
     self.show_infos = args.info
 
