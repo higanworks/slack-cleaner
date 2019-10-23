@@ -1,0 +1,2 @@
+- change base image to arm to run a1.* instances.
+- change entrypoint
